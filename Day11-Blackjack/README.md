@@ -2,15 +2,16 @@
 
 # 🃏 Blackjack Game in Python
 
-This is a simple command-line Blackjack game written in Python. It simulates a single-player round against the dealer using standard Blackjack rules. The project is designed for beginners and hobbyists interested in game logic, probability, and card-based gameplay.
+This is a simple command-line Blackjack game written in Python. It simulates a single-player round against the dealer using standard Blackjack rules.
 
 ## 🎯 Features
 
 - Play against the dealer with standard rules
 - Automatic score calculation with Ace adjustment
-- Supports multiple decks to simulate house advantage
+- Automatic reshuffling when cards run low
+- Supports multiple decks to simulate house advantage (default: 8)
 - Detects Blackjack and Bust conditions
-- Handles reshuffling when deck size gets low
+- Dealer logic: draws until 17 or more
 
 ## 🧠 Game Logic Highlights
 
@@ -20,6 +21,26 @@ This is a simple command-line Blackjack game written in Python. It simulates a s
   - Player can hit or pass.
   - Dealer hits until score reaches 17 or higher.
 - **End Conditions**: Game declares winner based on final scores with Blackjack and bust detection.
+
+## 🧩 Function Descriptions
+
+### `create_decks(num_of_decks)`
+Creates a shuffled deck and a dictionary that maps card ranks to their values in Blackjack.
+
+### `calculate_score(cards)`
+Calculates total score of a hand, adjusting Aces from 11 to 1 if needed.
+
+### `player_turn(player, dealer)`
+Handles user interaction during the player's turn. Prompts to hit or stand, and checks for bust or Blackjack.
+
+### `dealer_turn(dealer, play_score)`
+Handles the dealer's turn based on game rules (draw until 17).
+
+### `compare_score(dealer, deal_score, player, play_score)`
+Compares the player’s and dealer’s final scores and prints the result.
+
+### `play_game()`
+Runs a full round of Blackjack, dealing cards, handling turns, and evaluating the winner.
 
 ## 🔄 How to Play
 
@@ -42,12 +63,15 @@ Only standard Python libraries are used:
 ## 📌 To-Do / Future Improvements
 
 - Add betting system with chips or currency
+- Track win/loss statistics
+- Add suits (♠️ ♥️ ♦️ ♣️)
 - Support for multiple players
 - Visual interface with GUI or web frontend
 - Handle reshuffle dynamically during gameplay
 
 ## 🧑‍💻 Author
 
-Created by **Siwasit**  
+Created and developed as a learning project in Python by [**Siwasit** ](https://github.com/siwasitc).
+Happy coding! 🧠⚙️
 
 ---
