@@ -39,3 +39,57 @@ vs
 Compare B: Elon Musk, a CEO, from USA.
 
 Who has more followers? Type 'A' or 'B':
+````
+
+---
+
+## 🚀 Getting Started
+
+### Requirements
+
+* Python 3.6+
+
+### Run the Game
+
+```bash
+python main.py
+```
+
+> Make sure `main.py` has access to:
+>
+> * `art.py` → stores ASCII art like logos and vs signs
+> * `game_data.py` → stores the list of people with follower counts
+
+---
+
+## 📁 Project Structure
+
+```
+├── main.py           # Main game logic
+├── art.py            # ASCII art graphics
+├── game_data.py      # Data source of people and follower counts
+└── README.md         # This file
+```
+
+---
+
+## 🛠 Developer Notes
+
+* To enable **debug mode**, set `DEBUG_MODE = True` in `main.py`.
+* This reveals follower counts for both A and B, and shows how many choices remain.
+
+---
+
+## ✍️ Author
+
+Created by [Sid](https://github.com/siwasitc).
+Feel free to fork, contribute, or play around with the game!
+
+---
+
+## 🧠 Future Improvements (Ideas)
+
+* Add scoring leaderboard
+* Create a GUI version using `tkinter` or `streamlit`
+* Pull live follower data from Instagram or X API
+* Add difficulty modes (easy, medium, hard)
