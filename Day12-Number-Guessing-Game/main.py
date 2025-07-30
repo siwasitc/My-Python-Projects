@@ -7,12 +7,11 @@ EASY_LEVEL_TURNS = 10
 NORMAL_LEVEL_TURNS = 7
 HARD_LEVEL_TURNS = 5
 
-def game_set_up():
+def game_set_up()->int:
     """
     Initialises the number guessing game.
     Prints a welcome message and the game logo, then generate a random target number between 1 and 100 for the player to guess.
     Displays the number if DEBUG_MODE is enabled.
-    :return: (int) The random target number between 1 and 100.
     """
     print(logo)
     print("Welcome to the Number Guessing Game!\n"
@@ -25,7 +24,7 @@ def game_set_up():
               f"###################################\n")
     return number
 
-def get_level_and_attempts():
+def get_level_and_attempts()->int:
     """
     Prompts the player to choose a difficulty level.
 
@@ -35,7 +34,7 @@ def get_level_and_attempts():
         - hard: 5 attempts
 
     Repeats the prompt until a valid input is given.
-    :return: (int) The number of attempts based on chosen difficulty.
+    :return: The number of attempts based on chosen difficulty.
     """
     while True:
         level = input("Choose your difficulty. Type 'easy', 'normal', or 'hard': ").lower()
@@ -48,14 +47,10 @@ def get_level_and_attempts():
         else:
             print("Invalid choice. Please type 'easy', 'normal', or 'hard'.\n")
 
-def check_answer(user_guess, answer):
+def check_answer(user_guess:int, answer:int)->bool:
     """
     Compares the player's guess with the correct answer.
-
     If the guess is correct, congratulates the player. Otherwise, indicates whether the guess was too high or too low.
-    :param user_guess: (int) The number guessed by the player.
-    :param answer: (int) The correct number to guess.
-    :return: (bool) True if the guess is correct, False otherwise.
     """
     if user_guess == answer:
         print(f"\nYOU NAILED IT! THE NUMBER WAS {answer}!\n"
@@ -65,15 +60,12 @@ def check_answer(user_guess, answer):
         print("TOO HIGH" if user_guess > answer else "TOO LOW")
         return False
 
-def game_play(attempt, answer):
+def game_play(attempt:int, answer:int)->None:
     """
     Manages the main gameplay loop.
 
     Prompts the player to guess the number, gives feedback on each guess, and tracks the number of remaining attempts.
     Ends when the player guesses correctly or runs out of attempts.
-    :param attempt: (int) The number of attempts allowed.
-    :param answer: (int) The correct number to be guessed.
-    :return: None
     """
     while attempt > 0:    # Check if the attempts is more than zero
         print(f"\nYou have {attempt} attempts remaining to guess the number.")
