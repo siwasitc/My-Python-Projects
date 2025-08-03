@@ -7,7 +7,9 @@
 ---
 
 ## 🌈 Preview
-![Dot preview](https://your-image-preview-url-if-you-want.png)
+<p align="center">
+  <img src="https://github.com/siwasitc/My-Python-Projects/blob/main/Day18-Spot-Painting/spot_painting_sample.png" width="400">
+</p>
 
 ---
 
